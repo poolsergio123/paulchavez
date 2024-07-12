@@ -1,0 +1,18 @@
+<div class="container" style="text-align: center; margin-top: 50px;">
+  <input type="text" class="form-control" [(ngModel)]="nombre">
+  <br>
+  <br>
+  <button class="btn btn-primary" (click)="buscar()">Buscar Pokemon</button>
+</div>
+<ng-template #asd>
+  <div style="text-align: center; margin-top: 50px;">
+    <img [src]="pokemon.img" alt="">
+    <h2>{{pokemon.nombre}}</h2>
+    <h2>{{pokemon.tipo}}</h2>
+    <h2>{{pokemon.ataque}}</h2>
+  </div>
+</ng-template>
+<div *ngIf="pokemon.img =='';else asd"style="text-align: center; margin-top: 50px;">
+  <p>No hay pokemones :(</p>
+</div>
+
